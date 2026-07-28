@@ -104,7 +104,7 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(62, 39, 35, 0.75); /* Darker fade for hero text readability */
+    background-color: rgba(62, 39, 35, 0.75); /* Keeps the main banner text readable */
     z-index: 1;
 }
 
@@ -148,7 +148,7 @@ h1, h2, h3 {
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     border: 5px solid #fff;
-    position: relative; /* Added so the overlay stays inside the container */
+    position: relative; 
 }
 
 .showcase-overlay {
@@ -157,9 +157,13 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(62, 39, 35, 0.4); /* Lighter fade so you can still see the details of her work */
+    /* A very sheer, light tint to keep it bright */
+    background-color: rgba(255, 255, 255, 0.1); 
+    /* The soft-focus blur trick to hide impurities */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px); 
     z-index: 1;
-    pointer-events: none; /* Prevents the overlay from blocking video controls if added later */
+    pointer-events: none; 
 }
 
 .showcase-video {
