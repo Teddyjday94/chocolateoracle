@@ -16,7 +16,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Typography & Colors */
 h1, h2, h3 {
     font-family: 'Georgia', serif;
 }
@@ -76,11 +75,9 @@ h1, h2, h3 {
     background-color: #f1f1f1;
 }
 
-/* Hero Section */
+/* HERO SECTION (Video Background) */
 .hero {
-    background: linear-gradient(rgba(62, 39, 35, 0.8), rgba(62, 39, 35, 0.8)), url('https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&q=80');
-    background-size: cover;
-    background-position: center;
+    position: relative;
     height: 60vh;
     display: flex;
     align-items: center;
@@ -88,6 +85,33 @@ h1, h2, h3 {
     text-align: center;
     color: white;
     padding: 0 20px;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* This creates the faded effect. Adjust the '0.75' to make it lighter or darker */
+    background-color: rgba(62, 39, 35, 0.75); 
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Keeps text above the video and overlay */
 }
 
 .hero-content h2 {
@@ -100,8 +124,41 @@ h1, h2, h3 {
     margin-bottom: 25px;
 }
 
+/* TALENT SHOWCASE SECTION (New) */
+.showcase {
+    background-color: #fdfbf7;
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.showcase h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #5d4037;
+}
+
+.showcase p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.video-container {
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 5px solid #fff;
+}
+
+.showcase-video {
+    width: 100%;
+    display: block;
+}
+
 /* Products Section */
 .products {
+    background-color: #efebe9;
     padding: 60px 10%;
     text-align: center;
 }
@@ -132,7 +189,7 @@ h1, h2, h3 {
 
 /* Connect / Contact Section */
 .connect {
-    background-color: #efebe9; /* Light mocha */
+    background-color: #fdfbf7;
     padding: 60px 10%;
     text-align: center;
 }
