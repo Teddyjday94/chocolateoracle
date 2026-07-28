@@ -75,7 +75,7 @@ h1, h2, h3 {
     background-color: #f1f1f1;
 }
 
-/* HERO SECTION (Video Background) */
+/* HERO SECTION */
 .hero {
     position: relative;
     height: 60vh;
@@ -104,14 +104,13 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    /* This creates the faded effect. Adjust the '0.75' to make it lighter or darker */
-    background-color: rgba(62, 39, 35, 0.75); 
+    background-color: rgba(62, 39, 35, 0.75); /* Darker fade for hero text readability */
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* Keeps text above the video and overlay */
+    z-index: 2; 
 }
 
 .hero-content h2 {
@@ -124,7 +123,7 @@ h1, h2, h3 {
     margin-bottom: 25px;
 }
 
-/* TALENT SHOWCASE SECTION (New) */
+/* TALENT SHOWCASE SECTION */
 .showcase {
     background-color: #fdfbf7;
     padding: 60px 10%;
@@ -149,11 +148,25 @@ h1, h2, h3 {
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     border: 5px solid #fff;
+    position: relative; /* Added so the overlay stays inside the container */
+}
+
+.showcase-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(62, 39, 35, 0.4); /* Lighter fade so you can still see the details of her work */
+    z-index: 1;
+    pointer-events: none; /* Prevents the overlay from blocking video controls if added later */
 }
 
 .showcase-video {
     width: 100%;
     display: block;
+    position: relative;
+    z-index: 0;
 }
 
 /* Products Section */
