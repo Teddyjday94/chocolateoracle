@@ -3,86 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Chocolate Oracle | Divine Sweets & Treats</title>
+    <title>The Chocolate Oracle | Handcrafted sweets</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <nav class="navbar">
-            <h1 class="logo">The Chocolate Oracle</h1>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#connect" class="btn-primary">Order Now</a></li>
-            </ul>
+    <header class="site-header">
+        <a class="logo" href="#top" aria-label="The Chocolate Oracle home">
+            <img class="logo-photo" src="https://scontent.fbtr1-1.fna.fbcdn.net/v/t39.30808-6/594072596_122097712575153212_9166603788342999100_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx500x500&amp;ctp=s500x500&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=6ee11a&amp;_nc_ohc=r9WMjKjKbZIQ7kNvwG5Yayb&amp;_nc_oc=Adr1AbtajCmg60G0U6X-JL86kqpSKoylIPFxCXI_S026IdfykBBBpPwS6JotdLHTeus&amp;_nc_zt=23&amp;_nc_ht=scontent.fbtr1-1.fna&amp;_nc_gid=QRbJIeFo7KZ7VgWL2P33UQ&amp;_nc_ss=7b2a8&amp;oh=00_AQHlGFoj-AohFdkRQfYXMRDlt6p4kGwg3x56mPkNC_NFeQ&amp;oe=6A7360A0" alt="The Chocolate Oracle logo">
+            <span>The Chocolate<br><em>Oracle</em></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#story">Our story</a>
+            <a href="#menu">The menu</a>
+            <a href="#connect" class="btn-primary">Start an order <span aria-hidden="true">↗</span></a>
         </nav>
     </header>
 
     <!-- Hero Section -->
+    <main id="top">
     <section class="hero">
-        <!-- Faded overlay to keep the text readable -->
         <div class="video-overlay"></div>
-        
-        <!-- FIRST VIDEO: Background -->
         <video autoplay loop muted playsinline class="hero-video">
             <source src="hero-video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
         <div class="hero-content">
-            <h2>Divine Chocolate, Strawberries & Sweets</h2>
-            <p>Experience the magic of handcrafted baked goods and artisan treats.</p>
-            <a href="#connect" class="btn-secondary">Get in Touch</a>
+            <p class="eyebrow">Small-batch sweets · made to order</p>
+            <h1>Sweet things<br><em>worth believing in.</em></h1>
+            <p class="hero-copy">Hand-dipped strawberries, decadent chocolate, and little moments of wonder for the people you love.</p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn-secondary">Explore the menu <span aria-hidden="true">↓</span></a>
+                <span class="hero-note">Made fresh in<br>small batches</span>
+            </div>
         </div>
+        <div class="hero-stamp" aria-hidden="true"><span>Made with</span><strong>intent</strong><span>&amp; a little magic</span></div>
     </section>
 
-    <!-- Talent Showcase Section -->
-    <section id="about" class="showcase">
-        <h2>Artisan Craftsmanship</h2>
-        <p>Every treat is a masterpiece, crafted with passion and precision.</p>
-        
+    <section id="story" class="showcase">
+        <div class="section-intro">
+            <p class="eyebrow">The oracle knows</p>
+            <h2>A little <em>extraordinary</em><br>never hurt anyone.</h2>
+            <p>We make celebration feel tangible: glossy chocolate, bright fruit, and thoughtful details you can taste.</p>
+        </div>
         <div class="video-container">
-            <!-- Faded overlay for the second video -->
-            <div class="showcase-overlay"></div>
-
-            <!-- SECOND VIDEO: Talent Showcase -->
             <video autoplay loop muted playsinline class="showcase-video">
                 <source src="bouquet-video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+            <div class="video-caption"><span>02 / 04</span><strong>The art of the offering</strong></div>
         </div>
     </section>
 
-    <!-- Menu / Products Section -->
     <section id="menu" class="products">
-        <h2>Our Divine Offerings</h2>
+        <div class="section-heading"><p class="eyebrow">Choose your prophecy</p><h2>Our <em>divine</em> offerings</h2><span class="heading-rule"></span></div>
         <div class="product-grid">
             <div class="card">
-                <h3>Decadent Chocolate</h3>
-                <p>Rich, handcrafted chocolate truffles and bars tailored to your cravings.</p>
+                <span class="card-number">01</span><h3>Decadent chocolate</h3>
+                <p>Silky truffles, glossy bark, and rich little bites for serious chocolate people.</p><a href="#connect" aria-label="Order decadent chocolate">Order <span>↗</span></a>
             </div>
             <div class="card">
-                <h3>Dipped Strawberries</h3>
-                <p>Fresh, juicy strawberries enveloped in premium white and dark chocolate.</p>
+                <span class="card-number">02</span><h3>Dipped strawberries</h3>
+                <p>Fresh berries dressed in premium dark, milk, or white chocolate and a little sparkle.</p><a href="#connect" aria-label="Order dipped strawberries">Order <span>↗</span></a>
             </div>
             <div class="card">
-                <h3>Candied Grapes</h3>
-                <p>A sweet, satisfying crunch featuring our signature hard-candy coating.</p>
+                <span class="card-number">03</span><h3>Candied grapes</h3>
+                <p>A jewel-bright crunch with our signature hard-candy coating. Unexpected, unforgettable.</p><a href="#connect" aria-label="Order candied grapes">Order <span>↗</span></a>
             </div>
             <div class="card">
-                <h3>Custom Cookies</h3>
-                <p>Freshly baked cookies that melt in your mouth, perfect for any occasion.</p>
+                <span class="card-number">04</span><h3>Custom cookies</h3>
+                <p>Soft-centered, freshly baked, and made for birthdays, thank-yous, and just because.</p><a href="#connect" aria-label="Order custom cookies">Order <span>↗</span></a>
             </div>
         </div>
     </section>
 
-    <!-- Connect / Contact Section -->
     <section id="connect" class="connect">
-        <h2>Connect With the Oracle</h2>
-        <p>Ready to place an order or ask a question? Drop us a message below.</p>
-        
+        <div class="connect-copy"><p class="eyebrow">Your sign has arrived</p><h2>Tell us what<br>you’re <em>celebrating.</em></h2><p>Share the occasion, the date, and the sweet thing you have in mind. We’ll get back to you with the good stuff.</p></div>
         <form class="contact-form" action="#" method="POST">
             <div class="input-group">
                 <label for="name">Name</label>
@@ -90,22 +87,25 @@
             </div>
             
             <div class="input-group">
-                <label for="email">Email or Phone</label>
+                <label for="email">Email or phone</label>
                 <input type="text" id="email" name="email" required>
             </div>
 
             <div class="input-group">
-                <label for="message">What treats are you looking for?</label>
+                <label for="message">What are we making?</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
 
-            <button type="submit" class="btn-primary form-submit">Send Inquiry</button>
+            <button type="submit" class="btn-primary form-submit">Send inquiry <span aria-hidden="true">↗</span></button>
         </form>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 The Chocolate Oracle. All rights reserved.</p>
+        <a class="logo" href="#top"><img class="logo-photo" src="https://scontent.fbtr1-1.fna.fbcdn.net/v/t39.30808-6/594072596_122097712575153212_9166603788342999100_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx500x500&amp;ctp=s500x500&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=6ee11a&amp;_nc_ohc=r9WMjKjKbZIQ7kNvwG5Yayb&amp;_nc_oc=Adr1AbtajCmg60G0U6X-JL86kqpSKoylIPFxCXI_S026IdfykBBBpPwS6JotdLHTeus&amp;_nc_zt=23&amp;_nc_ht=scontent.fbtr1-1.fna&amp;_nc_gid=QRbJIeFo7KZ7VgWL2P33UQ&amp;_nc_ss=7b2a8&amp;oh=00_AQHlGFoj-AohFdkRQfYXMRDlt6p4kGwg3x56mPkNC_NFeQ&amp;oe=6A7360A0" alt="The Chocolate Oracle logo"><span>The Chocolate <em>Oracle</em></span></a>
+        <p>Handcrafted in small batches · © 2026</p>
+        <span><a href="https://www.facebook.com/profile.php?id=61584596374149" class="back-top">Facebook ↗</a> &nbsp; <a href="#top" class="back-top">Back to top ↑</a></span>
     </footer>
 
 </body>
