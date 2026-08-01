@@ -132,12 +132,6 @@ h1, h2, h3, .logo {
 .hero-note { border-left: 1px solid rgba(244,239,230,.45); padding-left: 15px; color: rgba(244,239,230,.68); font: .65rem/1.4 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .08em; }
 .hero-stamp { position: absolute; z-index: 2; right: 7vw; bottom: 12%; width: 125px; height: 125px; border: 1px solid rgba(229,173,85,.7); border-radius: 50%; display: grid; place-content: center; text-align: center; color: #e5ad55; font: .6rem/1.4 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .07em; transform: rotate(12deg); }
 .hero-stamp strong { font: italic 1.35rem 'Playfair Display', serif; text-transform: none; letter-spacing: 0; }
-.hero-content h2 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-
 /* TALENT SHOWCASE SECTION */
 .showcase {
     background: #f4efe6;
@@ -156,18 +150,6 @@ h1, h2, h3, .logo {
 .showcase-video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .video-caption { position: absolute; z-index: 2; bottom: 24px; left: 24px; right: 24px; display: flex; justify-content: space-between; color: #f4efe6; font: .65rem 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .1em; }
 .video-caption strong { font: .95rem 'Playfair Display', serif; text-transform: none; letter-spacing: 0; }
-.showcase h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: #5d4037;
-}
-
-.showcase p {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
-
-
 /* Products Section */
 .products {
     background: #211a17;
