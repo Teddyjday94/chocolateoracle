@@ -1,259 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chocolate Oracle | Handcrafted sweets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Space Grotesk', sans-serif;
-}
+    <header class="site-header">
+        <a class="logo" href="#top" aria-label="The Chocolate Oracle home">
+            <img class="logo-photo" src="https://scontent.fbtr1-1.fna.fbcdn.net/v/t39.30808-6/594072596_122097712575153212_9166603788342999100_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx500x500&amp;ctp=s500x500&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=6ee11a&amp;_nc_ohc=r9WMjKjKbZIQ7kNvwG5Yayb&amp;_nc_oc=Adr1AbtajCmg60G0U6X-JL86kqpSKoylIPFxCXI_S026IdfykBBBpPwS6JotdLHTeus&amp;_nc_zt=23&amp;_nc_ht=scontent.fbtr1-1.fna&amp;_nc_gid=QRbJIeFo7KZ7VgWL2P33UQ&amp;_nc_ss=7b2a8&amp;oh=00_AQHlGFoj-AohFdkRQfYXMRDlt6p4kGwg3x56mPkNC_NFeQ&amp;oe=6A7360A0" alt="The Chocolate Oracle logo">
+            <span>The Chocolate<br><em>Oracle</em></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#story">Our story</a>
+            <a href="#menu">The menu</a>
+            <a href="#connect" class="btn-primary">Start an order <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
 
-body {
-    background: #f4efe6;
-    color: #211a17;
-    line-height: 1.6;
-}
+    <!-- Hero Section -->
+    <main id="top">
+    <section class="hero">
+        <div class="video-overlay"></div>
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="hero-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-html {
-    scroll-behavior: smooth;
-}
+        <div class="hero-content">
+            <p class="eyebrow">Small-batch sweets · made to order</p>
+            <h1>Sweet things<br><em>worth believing in.</em></h1>
+            <p class="hero-copy">Hand-dipped strawberries, decadent chocolate, and little moments of wonder for the people you love.</p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn-secondary">Explore the menu <span aria-hidden="true">↓</span></a>
+                <span class="hero-note">Made fresh in<br>small batches</span>
+            </div>
+        </div>
+        <div class="hero-stamp" aria-hidden="true"><span>Made with</span><strong>intent</strong><span>&amp; a little magic</span></div>
+    </section>
 
-h1, h2, h3, .logo {
-    font-family: 'Playfair Display', Georgia, serif;
-}
+    <section id="story" class="showcase">
+        <div class="section-intro">
+            <p class="eyebrow">The oracle knows</p>
+            <h2>A little <em>extraordinary</em><br>never hurt anyone.</h2>
+            <p>We make celebration feel tangible: glossy chocolate, bright fruit, and thoughtful details you can taste.</p>
+        </div>
+        <div class="video-container">
+            <video autoplay loop muted playsinline class="showcase-video">
+                <source src="bouquet-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-caption"><span>02 / 04</span><strong>The art of the offering</strong></div>
+        </div>
+    </section>
 
-.site-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 28px 6vw;
-    color: #f4efe6;
-}
+    <section id="menu" class="products">
+        <div class="section-heading"><p class="eyebrow">Choose your prophecy</p><h2>Our <em>divine</em> offerings</h2><span class="heading-rule"></span></div>
+        <div class="product-grid">
+            <div class="card">
+                <span class="card-number">01</span><h3>Decadent chocolate</h3>
+                <p>Silky truffles, glossy bark, and rich little bites for serious chocolate people.</p><a href="#connect" aria-label="Order decadent chocolate">Order <span>↗</span></a>
+            </div>
+            <div class="card">
+                <span class="card-number">02</span><h3>Dipped strawberries</h3>
+                <p>Fresh berries dressed in premium dark, milk, or white chocolate and a little sparkle.</p><a href="#connect" aria-label="Order dipped strawberries">Order <span>↗</span></a>
+            </div>
+            <div class="card">
+                <span class="card-number">03</span><h3>Candied grapes</h3>
+                <p>A jewel-bright crunch with our signature hard-candy coating. Unexpected, unforgettable.</p><a href="#connect" aria-label="Order candied grapes">Order <span>↗</span></a>
+            </div>
+            <div class="card">
+                <span class="card-number">04</span><h3>Custom cookies</h3>
+                <p>Soft-centered, freshly baked, and made for birthdays, thank-yous, and just because.</p><a href="#connect" aria-label="Order custom cookies">Order <span>↗</span></a>
+            </div>
+        </div>
+    </section>
 
-.logo { display: flex; gap: 11px; align-items: center; color: inherit; text-decoration: none; font-size: 1rem; line-height: .9; letter-spacing: -.02em; }
-.logo em { color: #e5ad55; }
-.logo-photo { width: 42px; height: 42px; object-fit: cover; border-radius: 50%; border: 1px solid #e5ad55; background: #f4efe6; }
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-.nav-links a {
-    color: inherit;
-    text-decoration: none;
-    font-size: .75rem;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-}
+    <section id="connect" class="connect">
+        <div class="connect-copy"><p class="eyebrow">Your sign has arrived</p><h2>Tell us what<br>you’re <em>celebrating.</em></h2><p>Share the occasion, the date, and the sweet thing you have in mind. We’ll get back to you with the good stuff.</p></div>
+        <form class="contact-form" action="#" method="POST">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="email">Email or phone</label>
+                <input type="text" id="email" name="email" required>
+            </div>
 
-/* Buttons */
-.btn-primary {
-    background-color: #e5ad55;
-    color: #211a17 !important;
-    padding: 13px 18px;
-    border-radius: 0;
-    text-decoration: none;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: background .3s, transform .3s;
-}
+            <div class="input-group">
+                <label for="message">What are we making?</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
 
-.btn-primary:hover {
-    background-color: #f1c579;
-    transform: translateY(-2px);
-}
+            <button type="submit" class="btn-primary form-submit">Send inquiry <span aria-hidden="true">↗</span></button>
+        </form>
+    </section>
+    </main>
 
-.btn-secondary {
-    background-color: #e5ad55;
-    color: #211a17;
-    padding: 15px 21px;
-    border-radius: 0;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: .78rem;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    transition: background .3s;
-}
+    <!-- Footer -->
+    <footer>
+        <a class="logo" href="#top"><img class="logo-photo" src="https://scontent.fbtr1-1.fna.fbcdn.net/v/t39.30808-6/594072596_122097712575153212_9166603788342999100_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx500x500&amp;ctp=s500x500&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=6ee11a&amp;_nc_ohc=r9WMjKjKbZIQ7kNvwG5Yayb&amp;_nc_oc=Adr1AbtajCmg60G0U6X-JL86kqpSKoylIPFxCXI_S026IdfykBBBpPwS6JotdLHTeus&amp;_nc_zt=23&amp;_nc_ht=scontent.fbtr1-1.fna&amp;_nc_gid=QRbJIeFo7KZ7VgWL2P33UQ&amp;_nc_ss=7b2a8&amp;oh=00_AQHlGFoj-AohFdkRQfYXMRDlt6p4kGwg3x56mPkNC_NFeQ&amp;oe=6A7360A0" alt="The Chocolate Oracle logo"><span>The Chocolate <em>Oracle</em></span></a>
+        <p>Handcrafted in small batches · © 2026</p>
+        <span><a href="https://www.facebook.com/profile.php?id=61584596374149" class="back-top">Facebook ↗</a> &nbsp; <a href="#top" class="back-top">Back to top ↑</a></span>
+    </footer>
 
-.btn-secondary:hover {
-    background-color: #f1c579;
-}
-
-/* HERO SECTION */
-.hero {
-    position: relative;
-    min-height: 92vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    color: white;
-    padding: 160px 12vw 90px;
-    overflow: hidden;
-}
-
-.hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(28, 20, 17, .86) 0%, rgba(28, 20, 17, .35) 58%, rgba(28, 20, 17, .16));
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2; 
-    max-width: 720px;
-}
-
-.eyebrow { color: #e5ad55; font: 500 .68rem 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 20px; }
-.hero-content h1 { font-size: clamp(3.7rem, 8vw, 7.7rem); font-weight: 500; line-height: .9; letter-spacing: -.065em; margin-bottom: 27px; }
-.hero-content h1 em, h2 em { color: #e5ad55; font-weight: 500; }
-.hero-copy { max-width: 390px; font-size: 1.08rem; color: rgba(244,239,230,.78); margin-bottom: 32px; }
-.hero-actions { display: flex; align-items: center; gap: 27px; }
-.hero-note { border-left: 1px solid rgba(244,239,230,.45); padding-left: 15px; color: rgba(244,239,230,.68); font: .65rem/1.4 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .08em; }
-.hero-stamp { position: absolute; z-index: 2; right: 7vw; bottom: 12%; width: 125px; height: 125px; border: 1px solid rgba(229,173,85,.7); border-radius: 50%; display: grid; place-content: center; text-align: center; color: #e5ad55; font: .6rem/1.4 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .07em; transform: rotate(12deg); }
-.hero-stamp strong { font: italic 1.35rem 'Playfair Display', serif; text-transform: none; letter-spacing: 0; }
-.hero-content h2 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-
-/* TALENT SHOWCASE SECTION */
-.showcase {
-    background: #f4efe6;
-    padding: 150px 10vw;
-    display: grid;
-    grid-template-columns: .8fr 1.2fr;
-    gap: 9vw;
-    align-items: center;
-}
-.section-intro h2, .section-heading h2, .connect h2 { font-size: clamp(2.8rem, 5.7vw, 5.4rem); font-weight: 500; line-height: .95; letter-spacing: -.055em; margin-bottom: 25px; }
-.section-intro > p:last-child { color: #6c625a; max-width: 330px; }
-.section-intro .eyebrow, .section-heading .eyebrow { color: #b46c3f; }
-.section-intro h2 em { color: #b46c3f; }
-.video-container { position: relative; overflow: hidden; aspect-ratio: 4 / 5; max-height: 660px; }
-.video-container::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(24,15,11,.6), transparent 50%); pointer-events: none; }
-.showcase-video { width: 100%; height: 100%; object-fit: cover; display: block; }
-.video-caption { position: absolute; z-index: 2; bottom: 24px; left: 24px; right: 24px; display: flex; justify-content: space-between; color: #f4efe6; font: .65rem 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .1em; }
-.video-caption strong { font: .95rem 'Playfair Display', serif; text-transform: none; letter-spacing: 0; }
-.showcase h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: #5d4037;
-}
-
-.showcase p {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
-
-
-/* Products Section */
-.products {
-    background: #211a17;
-    color: #f4efe6;
-    padding: 140px 10vw;
-}
-.section-heading { display: flex; align-items: baseline; gap: 25px; margin-bottom: 60px; flex-wrap: wrap; }.section-heading h2 { margin: 0; }.section-heading h2 em { color: #e5ad55; }.heading-rule { height: 1px; flex: 1; min-width: 60px; background: rgba(244,239,230,.25); }
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1px;
-    background: rgba(244,239,230,.25);
-}
-
-.card {
-    background: #211a17;
-    padding: 30px 28px 35px;
-    min-height: 265px;
-    display: flex;
-    flex-direction: column;
-}
-.card-number { color: #e5ad55; font: .68rem 'DM Mono', monospace; margin-bottom: 45px; }.card h3 { font-size: 1.65rem; font-weight: 500; margin-bottom: 10px; }.card p { color: rgba(244,239,230,.62); font-size: .9rem; margin-bottom: 22px; }.card a { color: #e5ad55; font: .68rem 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .1em; text-decoration: none; margin-top: auto; }
-
-/* Connect / Contact Section */
-.connect {
-    background: #d9e0d4;
-    padding: 140px 10vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10vw;
-    align-items: start;
-}
-.connect h2 em { color: #b46c3f; }.connect-copy > p:last-child { max-width: 330px; color: #536052; }.connect .eyebrow { color: #6e7d69; }
-
-.contact-form {
-    max-width: 600px;
-    margin: 0;
-    text-align: left;
-}
-
-.input-group {
-    margin-bottom: 23px;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font: .65rem 'DM Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-}
-
-.input-group input, 
-.input-group textarea {
-    width: 100%;
-    padding: 13px 0;
-    border: 0;
-    border-bottom: 1px solid rgba(33,26,23,.35);
-    border-radius: 0;
-    background: transparent;
-    font-size: 1rem;
-    color: #211a17;
-    outline: none;
-}
-.input-group input:focus, .input-group textarea:focus { border-bottom-color: #b46c3f; }.input-group textarea { min-height: 100px; resize: vertical; }.form-submit { margin-top: 8px; cursor: pointer; }
-
-.form-submit {
-    font-size: .72rem;
-}
-
-/* Footer */
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 28px 6vw;
-    background: #211a17;
-    color: #f4efe6;
-    font: .65rem 'DM Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: .06em;
-}
-.back-top { color: #e5ad55; text-decoration: none; }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .site-header { padding: 22px 6vw; }.nav-links { gap: 14px; }.nav-links > a:not(.btn-primary) { display: none; }.hero { min-height: 88vh; padding: 140px 8vw 70px; }.hero-content h1 { font-size: clamp(3.5rem, 16vw, 5.4rem); }.hero-stamp { right: 7vw; bottom: 8%; transform: scale(.75) rotate(12deg); }.showcase, .connect { padding: 90px 8vw; grid-template-columns: 1fr; gap: 48px; }.video-container { max-height: 520px; }.products { padding: 90px 8vw; }.product-grid { grid-template-columns: 1fr; }.card { min-height: 220px; }.card-number { margin-bottom: 30px; } footer { flex-wrap: wrap; gap: 20px; } footer p { order: 3; width: 100%; }
-}
+</body>
+</html>
