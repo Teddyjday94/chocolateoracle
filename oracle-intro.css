@@ -125,8 +125,8 @@ h1, h2, .intro-logo span { font-family: 'Cormorant Garamond', Georgia, serif; }
 
 .card-fan {
     position: relative;
-    width: min(880px, 100%);
-    height: 300px;
+    width: min(1040px, 100%);
+    height: 360px;
     margin-top: 1rem;
 }
 
@@ -134,22 +134,21 @@ h1, h2, .intro-logo span { font-family: 'Cormorant Garamond', Georgia, serif; }
     position: absolute;
     left: 50%;
     bottom: 0;
-    width: 108px;
-    height: 162px;
-    margin-left: -54px;
+    width: 150px;
+    height: 238px;
+    margin-left: -75px;
     transform-origin: 50% 100%;
-    transform: translateY(70px) scale(.55) rotate(0deg);
+    transform: translateY(90px) scale(.55) rotate(0deg);
     opacity: 0;
     transition: transform .75s cubic-bezier(.2,.8,.2,1), opacity .5s ease, box-shadow .3s ease, filter .3s ease;
     background: linear-gradient(160deg, var(--ink-soft), var(--ink) 70%);
-    border: 1px solid var(--gold);
-    border-radius: 10px;
-    padding: .7rem .5rem .6rem;
+    border: none;
+    border-radius: 12px;
+    padding: .55rem .5rem .6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: .3rem;
     cursor: pointer;
     color: var(--text-on-dark);
     font-family: 'Jost', sans-serif;
@@ -162,25 +161,68 @@ h1, h2, .intro-logo span { font-family: 'Cormorant Garamond', Georgia, serif; }
     opacity: 1;
 }
 
-.tarot-card::before {
-    content: '';
+/* Decorative engraved frame, drawn once per card as an SVG overlay. */
+.card-frame {
     position: absolute;
-    inset: 6px;
-    border: 1px solid var(--ink-line);
-    border-radius: 6px;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
+    z-index: 0;
 }
+.card-frame .frame-outer { fill: none; stroke: var(--gold); stroke-width: 1; }
+.card-frame .frame-inner { fill: none; stroke: var(--gold); stroke-width: .5; opacity: .55; }
+.card-frame .frame-tick { fill: none; stroke: var(--gold-bright); stroke-width: 1.1; stroke-linecap: round; }
+
+.tarot-card > * { position: relative; z-index: 1; }
 
 .tarot-card .card-number {
-    font: .58rem/1 'DM Mono', monospace;
-    letter-spacing: .1em;
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    width: 100%;
+    font: .56rem/1 'DM Mono', monospace;
+    letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-top: .1rem;
+    margin-top: .2rem;
 }
-.tarot-card .zodiac-glyph { font-size: 2rem; line-height: 1; color: var(--gold-bright); margin-top: .3rem; }
-.tarot-card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-weight: 600; margin-top: .15rem; }
-.tarot-card .zodiac-dates { font: .62rem/1 'DM Mono', monospace; color: var(--text-on-dark-dim); letter-spacing: .02em; }
+.tarot-card .card-number::before,
+.tarot-card .card-number::after { content: ''; flex: 1; height: 1px; background: var(--gold); opacity: .5; }
+
+.card-illustration {
+    width: 76%;
+    aspect-ratio: 1;
+    margin: .5rem auto 0;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: radial-gradient(circle at 50% 32%, var(--wine) 0%, var(--ink-soft) 68%, var(--ink) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: inset 0 0 12px rgba(0,0,0,.5);
+}
+.card-constellation { width: 84%; height: 84%; overflow: visible; }
+.card-constellation .const-line { stroke: var(--gold); stroke-width: .9; opacity: .8; fill: none; }
+.card-constellation .const-star { fill: var(--gold-bright); }
+
+.tarot-card .card-glyph {
+    margin-top: -15px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    font-size: 1.05rem;
+    color: var(--gold-bright);
+}
+
+.tarot-card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; font-weight: 600; margin-top: .3rem; }
+.tarot-card .zodiac-dates { font: .64rem/1 'DM Mono', monospace; color: var(--text-on-dark-dim); letter-spacing: .02em; margin-top: .2rem; }
 
 .tarot-card:hover,
 .tarot-card:focus-visible {
