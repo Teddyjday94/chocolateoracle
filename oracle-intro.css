@@ -109,10 +109,22 @@ h1, h2, .intro-logo span { font-family: 'Cormorant Garamond', Georgia, serif; }
 }
 @keyframes twinkle { 0%, 100% { opacity: .4; } 50% { opacity: .75; } }
 
-.intro-lead { position: relative; z-index: 2; text-align: center; max-width: 34rem; margin-bottom: 3.5rem; }
-.intro-lead h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 600; line-height: 1.08; margin-bottom: .9rem; }
+.intro-lead {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 34rem;
+    margin-bottom: 3.5rem;
+    padding: 1rem 1.2rem;
+    border-radius: 1.2rem;
+    background: rgba(10, 7, 10, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16);
+}
+.intro-lead h1 { color: var(--text-on-dark); font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 600; line-height: 1.08; margin-bottom: .9rem; }
 .intro-lead em { color: var(--gold-bright); font-style: italic; }
-.intro-copy { color: var(--text-on-dark-dim); font-size: 1.02rem; }
+.intro-copy { color: var(--text-on-dark); font-size: 1.02rem; max-width: 30rem; margin: 0 auto; }
 
 /* ============================================
    THE FAN
@@ -223,6 +235,23 @@ h1, h2, .intro-logo span { font-family: 'Cormorant Garamond', Georgia, serif; }
 
 .tarot-card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; font-weight: 600; margin-top: .3rem; }
 .tarot-card .zodiac-dates { font: .64rem/1 'DM Mono', monospace; color: var(--text-on-dark-dim); letter-spacing: .02em; margin-top: .2rem; }
+
+.card-hint {
+    margin-top: .45rem;
+    font: .62rem/1 'DM Mono', monospace;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity .25s ease, transform .25s ease;
+    pointer-events: none;
+}
+
+.tarot-card.pending .card-hint {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 .tarot-card:hover,
 .tarot-card:focus-visible {
