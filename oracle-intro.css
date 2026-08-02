@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap');
+
+/* Token set matches style.css so this page reads as one site, not a bolt-on. */
+:root {
+    --ink: #170e13;
+    --ink-soft: #241620;
+    --ink-line: rgba(241, 227, 196, 0.14);
+    --parchment: #f1e3c6;
+    --parchment-soft: #e7d3a8;
+    --gold: #c69a3e;
+    --gold-bright: #e8c979;
+    --wine: #7c2436;
+    --wine-bright: #a3324a;
+    --text-on-dark: #f1e3c6;
+    --text-on-dark-dim: rgba(241, 227, 198, 0.68);
+    --text-on-light: #2a1a20;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Jost', sans-serif; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--ink);
+    color: var(--text-on-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+h1, h2, .intro-logo span { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+.eyebrow {
+    display: block;
+    font: .68rem/1 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    color: var(--gold-bright);
+    margin-bottom: .6rem;
+}
+
+/* ============================================
+   SKIP LINK + LOGO
+   ============================================ */
+.skip-shop {
+    position: fixed;
+    top: 22px;
+    right: 24px;
+    z-index: 40;
+    font: .78rem/1 'DM Mono', monospace;
+    letter-spacing: .04em;
+    color: var(--text-on-dark-dim);
+    text-decoration: none;
+    padding: .5rem .7rem;
+    border: 1px solid var(--ink-line);
+    border-radius: 999px;
+    transition: color .25s, border-color .25s;
+}
+.skip-shop:hover { color: var(--gold-bright); border-color: var(--gold); }
+
+.intro-logo {
+    position: fixed;
+    top: 20px;
+    left: 24px;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    text-decoration: none;
+    color: var(--text-on-dark);
+}
+.intro-logo img { width: 38px; height: 38px; object-fit: cover; border-radius: 50%; border: 1px solid var(--gold); padding: 1px; }
+.intro-logo span { font-size: 1rem; line-height: 1.05; }
+.intro-logo em { color: var(--gold-bright); font-style: italic; }
+
+/* ============================================
+   PAGE + STARFIELD
+   ============================================ */
+.oracle-intro {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 7.5rem 1.5rem 5rem;
+    overflow: hidden;
+}
+
+.intro-backdrop {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .55;
+    background-image:
+        radial-gradient(1.4px 1.4px at 12% 22%, var(--gold-bright), transparent),
+        radial-gradient(1px 1px at 27% 68%, var(--parchment), transparent),
+        radial-gradient(1.6px 1.6px at 41% 14%, var(--gold-bright), transparent),
+        radial-gradient(1px 1px at 58% 78%, var(--parchment), transparent),
+        radial-gradient(1.3px 1.3px at 73% 33%, var(--gold-bright), transparent),
+        radial-gradient(1px 1px at 85% 61%, var(--parchment), transparent),
+        radial-gradient(1.5px 1.5px at 93% 20%, var(--gold-bright), transparent),
+        radial-gradient(1px 1px at 6% 85%, var(--parchment), transparent),
+        radial-gradient(1.2px 1.2px at 50% 92%, var(--gold-bright), transparent),
+        radial-gradient(1px 1px at 18% 45%, var(--parchment), transparent);
+    background-repeat: no-repeat;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .intro-backdrop { animation: twinkle 7s ease-in-out infinite; }
+}
+@keyframes twinkle { 0%, 100% { opacity: .4; } 50% { opacity: .75; } }
+
+.intro-lead { position: relative; z-index: 2; text-align: center; max-width: 34rem; margin-bottom: 3.5rem; }
+.intro-lead h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 600; line-height: 1.08; margin-bottom: .9rem; }
+.intro-lead em { color: var(--gold-bright); font-style: italic; }
+.intro-copy { color: var(--text-on-dark-dim); font-size: 1.02rem; }
+
+/* ============================================
+   THE FAN
+   Cards share one pivot at the bottom center of
+   .card-fan and rotate outward from it, the way a
+   dealt hand of cards actually fans. On narrow
+   screens the fan flattens into a scroll strip.
+   ============================================ */
+.deck-wrap { position: relative; z-index: 2; width: 100%; display: flex; justify-content: center; }
+
+.card-fan {
+    position: relative;
+    width: min(880px, 100%);
+    height: 300px;
+    margin-top: 1rem;
+}
+
+.tarot-card {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 108px;
+    height: 162px;
+    margin-left: -54px;
+    transform-origin: 50% 100%;
+    transform: translateY(70px) scale(.55) rotate(0deg);
+    opacity: 0;
+    transition: transform .75s cubic-bezier(.2,.8,.2,1), opacity .5s ease, box-shadow .3s ease, filter .3s ease;
+    background: linear-gradient(160deg, var(--ink-soft), var(--ink) 70%);
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    padding: .7rem .5rem .6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .3rem;
+    cursor: pointer;
+    color: var(--text-on-dark);
+    font-family: 'Jost', sans-serif;
+    box-shadow: 0 10px 24px rgba(0,0,0,.35);
+    z-index: 1;
+}
+
+.card-fan.in-fan .tarot-card {
+    transform: translateY(0) scale(1) rotate(var(--angle));
+    opacity: 1;
+}
+
+.tarot-card::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid var(--ink-line);
+    border-radius: 6px;
+    pointer-events: none;
+}
+
+.tarot-card .card-number {
+    font: .58rem/1 'DM Mono', monospace;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: .1rem;
+}
+.tarot-card .zodiac-glyph { font-size: 2rem; line-height: 1; color: var(--gold-bright); margin-top: .3rem; }
+.tarot-card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-weight: 600; margin-top: .15rem; }
+.tarot-card .zodiac-dates { font: .62rem/1 'DM Mono', monospace; color: var(--text-on-dark-dim); letter-spacing: .02em; }
+
+.tarot-card:hover,
+.tarot-card:focus-visible {
+    z-index: 30;
+    box-shadow: 0 0 0 1px var(--gold-bright), 0 18px 34px rgba(0,0,0,.45), 0 0 26px rgba(232, 201, 121, .35);
+    outline: none;
+}
+.card-fan.in-fan .tarot-card:hover,
+.card-fan.in-fan .tarot-card:focus-visible {
+    transform: translateY(-22px) scale(1.05) rotate(var(--angle));
+}
+
+.tarot-card.chosen {
+    animation: cardChosen .6s ease forwards;
+    z-index: 40;
+}
+@keyframes cardChosen {
+    0%   { transform: translateY(-10px) scale(1) rotate(var(--angle)); }
+    45%  { transform: translateY(-40px) scale(1.12) rotateY(180deg) rotate(0deg); box-shadow: 0 0 40px rgba(232, 201, 121, .65); }
+    100% { transform: translateY(-10px) scale(1.05) rotate(var(--angle)); }
+}
+
+/* small gold spark burst on selection */
+.spark {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold-bright);
+    pointer-events: none;
+    z-index: 50;
+    animation: sparkOut .6s ease-out forwards;
+}
+@keyframes sparkOut {
+    to { transform: translate(var(--sx), var(--sy)) scale(0); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tarot-card { transition: opacity .3s ease; transform: rotate(var(--angle)) !important; opacity: 1 !important; }
+    .card-fan.in-fan .tarot-card:hover, .card-fan.in-fan .tarot-card:focus-visible { transform: rotate(var(--angle)) !important; }
+    .tarot-card.chosen { animation: none; }
+}
+
+/* Narrow screens: flatten the fan into an upright, scrollable row. */
+@media (max-width: 760px) {
+    .oracle-intro { padding-top: 6.5rem; }
+    .card-fan {
+        height: auto;
+        display: flex;
+        gap: .9rem;
+        overflow-x: auto;
+        overflow-y: visible;
+        padding: .5rem 1rem 1.5rem;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+    .tarot-card {
+        position: static;
+        margin-left: 0;
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+        transform: translateY(16px) scale(.9) !important;
+        transition: opacity .5s ease, box-shadow .3s ease;
+    }
+    .card-fan.in-fan .tarot-card { transform: none !important; opacity: 1; }
+    .card-fan.in-fan .tarot-card:hover,
+    .card-fan.in-fan .tarot-card:focus-visible { transform: translateY(-8px) !important; }
+    .tarot-card.chosen { animation: cardChosenMobile .55s ease forwards; }
+    @keyframes cardChosenMobile {
+        0% { transform: translateY(0) scale(1); }
+        45% { transform: translateY(-14px) scale(1.08) rotateY(180deg); box-shadow: 0 0 34px rgba(232,201,121,.6); }
+        100% { transform: translateY(-4px) scale(1.04); }
+    }
+}
+
+/* ============================================
+   READING PANEL
+   ============================================ */
+.reading-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(23, 14, 19, .78);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease;
+}
+.reading-scrim.open { opacity: 1; pointer-events: auto; }
+
+.reading-panel {
+    position: relative;
+    width: min(420px, 100%);
+    max-height: 88vh;
+    overflow-y: auto;
+    background: var(--parchment);
+    color: var(--text-on-light);
+    border: 1px solid var(--gold);
+    border-radius: 16px;
+    padding: 2.4rem 2rem 2rem;
+    text-align: center;
+    transform: translateY(18px) scale(.97);
+    opacity: 0;
+    transition: transform .4s cubic-bezier(.2,.8,.2,1), opacity .35s ease;
+}
+.reading-scrim.open .reading-panel { transform: translateY(0) scale(1); opacity: 1; }
+
+.reading-panel .eyebrow { color: var(--wine); }
+.reading-glyph { display: block; font-size: 2.6rem; color: var(--gold); margin-bottom: .3rem; }
+.reading-panel h2 { font-size: 2rem; font-weight: 600; }
+.reading-dates { font: .68rem/1 'DM Mono', monospace; color: #6b5847; letter-spacing: .05em; margin: .35rem 0 1.2rem; }
+.reading-text { font-size: 1.02rem; line-height: 1.6; margin-bottom: 1.4rem; }
+
+.reading-pairing {
+    background: rgba(124, 36, 54, .06);
+    border: 1px solid rgba(124, 36, 54, .18);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 1.6rem;
+}
+.reading-pairing .eyebrow { margin-bottom: .3rem; }
+.reading-pairing p { font-size: .92rem; }
+
+.reading-actions { display: flex; flex-direction: column; gap: .7rem; align-items: center; }
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    background: var(--wine);
+    color: var(--parchment) !important;
+    text-decoration: none;
+    font: 500 .88rem/1 'Jost', sans-serif;
+    letter-spacing: .02em;
+    padding: .85rem 1.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--wine);
+    transition: background-color .25s, color .25s, transform .25s;
+}
+.btn-primary:hover { background-color: var(--wine-bright); transform: translateY(-1px); }
+
+.btn-secondary {
+    background: none;
+    border: none;
+    color: #6b5847;
+    font: .82rem/1 'DM Mono', monospace;
+    letter-spacing: .04em;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    padding: .3rem;
+}
+.btn-secondary:hover { color: var(--wine); }
+
+.reading-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(42,26,32,.2);
+    background: transparent;
+    color: var(--text-on-light);
+    font-size: .85rem;
+    cursor: pointer;
+    transition: background-color .2s, color .2s;
+}
+.reading-close:hover { background: var(--wine); color: var(--parchment); border-color: var(--wine); }
