@@ -260,6 +260,178 @@ h1, h2, .intro-logo span { font-family: 'Cormorant Garamond', Georgia, serif; }
     to { transform: translate(var(--sx), var(--sy)) scale(0); opacity: 0; }
 }
 
+.card--oracle {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease, background 240ms ease;
+    border: 1px solid rgba(232, 201, 121, 0.16);
+}
+
+.card--oracle:hover,
+.card--oracle:focus-visible,
+.card--oracle.is-hovered {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+    border-color: rgba(232, 201, 121, 0.45);
+}
+
+.card--oracle::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(232, 201, 121, 0.16), transparent 45%);
+    opacity: 0;
+    transition: opacity 240ms ease;
+    pointer-events: none;
+}
+
+.card--oracle.is-hovered::before,
+.card--oracle.is-primed::before,
+.card--oracle.is-revealed::before {
+    opacity: 1;
+}
+
+.card-orbit {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    pointer-events: none;
+}
+
+.card-orbit-ring,
+.card-orbit-dot {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(232, 201, 121, 0.45);
+}
+
+.card-orbit-dot {
+    inset: 10px;
+    background: rgba(232, 201, 121, 0.12);
+    border-color: rgba(232, 201, 121, 0.86);
+    box-shadow: 0 0 0 4px rgba(232, 201, 121, 0.08);
+}
+
+.card--oracle.is-primed .card-orbit {
+    animation: orbitPulse 900ms ease-in-out infinite;
+}
+
+.card-preview {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(241, 227, 198, 0.16);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    min-height: 34px;
+    transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.card-preview-label {
+    color: rgba(241, 227, 198, 0.56);
+    font: 0.62rem/1.4 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.card-preview-sign {
+    color: var(--gold-bright);
+    font: 600 0.95rem 'Cormorant Garamond', serif;
+}
+
+.card-reveal {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    overflow: hidden;
+    transition: max-height 360ms ease, opacity 360ms ease, transform 360ms ease;
+    margin-top: 12px;
+    padding-top: 2px;
+}
+
+.card-reveal-title {
+    color: var(--gold-bright);
+    font: 0.66rem/1.3 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+}
+
+.card-reveal-copy {
+    color: rgba(241, 227, 198, 0.86);
+    font-size: 0.92rem;
+}
+
+.card--oracle.is-revealed .card-reveal {
+    max-height: 120px;
+    opacity: 1;
+    transform: translateY(0);
+    animation: revealGlow 700ms ease both;
+}
+
+.card--oracle.is-revealed .card-preview {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.card-action {
+    border: 0;
+    background: transparent;
+    color: var(--gold-bright);
+    font: 0.68rem 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 220ms ease, color 220ms ease;
+}
+
+.card-action:hover,
+.card-action:focus-visible {
+    color: #f1dca8;
+    transform: translateY(-1px);
+}
+
+.card--oracle.is-primed .card-action {
+    color: #f1dca8;
+}
+
+@keyframes orbitPulse {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.08); opacity: 1; }
+}
+
+@keyframes revealGlow {
+    0% { transform: translateY(12px) scale(0.98); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .card-preview {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+}
+
 @media (prefers-reduced-motion: reduce) {
     .tarot-card { transition: opacity .3s ease; transform: rotate(var(--angle)) !important; opacity: 1 !important; }
     .card-fan.in-fan .tarot-card:hover, .card-fan.in-fan .tarot-card:focus-visible { transform: rotate(var(--angle)) !important; }
