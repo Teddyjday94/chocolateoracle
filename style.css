@@ -198,7 +198,7 @@ h1, h2, h3, .logo {
     letter-spacing: .18em;
     margin-bottom: 22px;
 }
-.eyebrow::before { content: '✦'; font-size: .85em; }
+.eyebrow::before { content: '•'; font-size: .85em; }
 
 .hero-content h1 { font-size: clamp(3.6rem, 7.6vw, 7.2rem); font-weight: 600; line-height: .92; letter-spacing: -.03em; margin-bottom: 27px; }
 .hero-content h1 em, h2 em { color: var(--gold-bright); font-weight: 600; font-style: italic; }
@@ -254,7 +254,7 @@ h1, h2, h3, .logo {
 .section-intro h2, .section-heading h2, .connect h2 { font-size: clamp(3rem, 5.4vw, 5.6rem); font-weight: 600; line-height: .96; letter-spacing: -.02em; margin-bottom: 25px; text-shadow: 0 12px 36px rgba(0, 0, 0, 0.22); }
 .section-intro > p:last-child { color: rgba(241, 227, 198, 1); max-width: 360px; font-size: 1.08rem; }
 .section-intro .eyebrow, .section-heading .eyebrow { color: var(--gold-bright); font-size: .78rem; letter-spacing: .18em; text-shadow: 0 0 12px rgba(232, 201, 121, 0.4); }
-.section-intro .eyebrow::before, .section-heading .eyebrow::before, .connect .eyebrow::before { content: '✦'; color: var(--gold-bright); }
+.section-intro .eyebrow::before, .section-heading .eyebrow::before, .connect .eyebrow::before { content: '•'; color: var(--gold-bright); }
 .section-intro h2 em { color: var(--gold-bright); font-style: italic; }
 .section-intro h2 { color: var(--parchment); }
 

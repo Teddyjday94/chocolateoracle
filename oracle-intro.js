@@ -46,7 +46,7 @@
 
   var ZODIAC = [
     {
-      sign: 'Aries', glyph: '\u2648', dates: 'Mar 21 \u2013 Apr 19', arcana: 'Arcana I',
+      sign: 'Aries', glyph: 'I', dates: 'Mar 21 \u2013 Apr 19', arcana: 'Arcana I',
       pairing: 'Candied grapes. Jewel-bright and a little unexpected, same as you.',
       readings: [
         'The first move is yours today. Take it before the doubt catches up.',
@@ -56,7 +56,7 @@
       ]
     },
     {
-      sign: 'Taurus', glyph: '\u2649', dates: 'Apr 20 \u2013 May 20', arcana: 'Arcana II',
+      sign: 'Taurus', glyph: 'II', dates: 'Apr 20 \u2013 May 20', arcana: 'Arcana II',
       pairing: 'Decadent chocolate. Rich, unhurried, exactly your speed.',
       readings: [
         'Slow down. The good stuff was never going to rush for you anyway.',
@@ -66,7 +66,7 @@
       ]
     },
     {
-      sign: 'Gemini', glyph: '\u264A', dates: 'May 21 \u2013 Jun 20', arcana: 'Arcana III',
+      sign: 'Gemini', glyph: 'III', dates: 'May 21 \u2013 Jun 20', arcana: 'Arcana III',
       pairing: 'Custom cookies. Made to whatever spec you are feeling today.',
       readings: [
         'Two conversations pull you in different directions. Let both finish.',
@@ -76,7 +76,7 @@
       ]
     },
     {
-      sign: 'Cancer', glyph: '\u264B', dates: 'Jun 21 \u2013 Jul 22', arcana: 'Arcana IV',
+      sign: 'Cancer', glyph: 'IV', dates: 'Jun 21 \u2013 Jul 22', arcana: 'Arcana IV',
       pairing: 'Dipped strawberries. Sweet, familiar, made to be shared.',
       readings: [
         'Someone needs you to check in first. You already knew that.',
@@ -86,7 +86,7 @@
       ]
     },
     {
-      sign: 'Leo', glyph: '\u264C', dates: 'Jul 23 \u2013 Aug 22', arcana: 'Arcana V',
+      sign: 'Leo', glyph: 'V', dates: 'Jul 23 \u2013 Aug 22', arcana: 'Arcana V',
       pairing: 'Decadent chocolate. Nothing subtle about it, and neither are you.',
       readings: [
         'The room notices you before you say a word. Use that.',
@@ -96,7 +96,7 @@
       ]
     },
     {
-      sign: 'Virgo', glyph: '\u264D', dates: 'Aug 23 \u2013 Sep 22', arcana: 'Arcana VI',
+      sign: 'Virgo', glyph: 'VI', dates: 'Aug 23 \u2013 Sep 22', arcana: 'Arcana VI',
       pairing: 'Custom cookies. Built to the detail, the way you like things.',
       readings: [
         'The small fix you have been putting off takes four minutes. Do it now.',
@@ -106,7 +106,7 @@
       ]
     },
     {
-      sign: 'Libra', glyph: '\u264E', dates: 'Sep 23 \u2013 Oct 22', arcana: 'Arcana VII',
+      sign: 'Libra', glyph: 'VII', dates: 'Sep 23 \u2013 Oct 22', arcana: 'Arcana VII',
       pairing: 'Dipped strawberries. Balanced, a little elegant, easy to love.',
       readings: [
         'A decision waits on you longer than it should. Pick either door.',
@@ -116,7 +116,7 @@
       ]
     },
     {
-      sign: 'Scorpio', glyph: '\u264F', dates: 'Oct 23 \u2013 Nov 21', arcana: 'Arcana VIII',
+      sign: 'Scorpio', glyph: 'VIII', dates: 'Oct 23 \u2013 Nov 21', arcana: 'Arcana VIII',
       pairing: 'Decadent chocolate. Dark, deep, not for the faint of heart.',
       readings: [
         'Something hidden surfaces today. You already suspected it.',
@@ -126,7 +126,7 @@
       ]
     },
     {
-      sign: 'Sagittarius', glyph: '\u2650', dates: 'Nov 22 \u2013 Dec 21', arcana: 'Arcana IX',
+      sign: 'Sagittarius', glyph: 'IX', dates: 'Nov 22 \u2013 Dec 21', arcana: 'Arcana IX',
       pairing: 'Candied grapes. A surprise crunch for someone who likes surprises.',
       readings: [
         'A plan you made on a whim turns out to be the right one.',
@@ -136,7 +136,7 @@
       ]
     },
     {
-      sign: 'Capricorn', glyph: '\u2651', dates: 'Dec 22 \u2013 Jan 19', arcana: 'Arcana X',
+      sign: 'Capricorn', glyph: 'X', dates: 'Dec 22 \u2013 Jan 19', arcana: 'Arcana X',
       pairing: 'Custom cookies. Made to order, no wasted motion.',
       readings: [
         'The work you did quietly last month gets noticed today.',
@@ -146,7 +146,7 @@
       ]
     },
     {
-      sign: 'Aquarius', glyph: '\u2652', dates: 'Jan 20 \u2013 Feb 18', arcana: 'Arcana XI',
+      sign: 'Aquarius', glyph: 'XI', dates: 'Jan 20 \u2013 Feb 18', arcana: 'Arcana XI',
       pairing: 'Candied grapes. Nobody else is ordering this, which is the point.',
       readings: [
         'An idea that sounded strange last week makes sense to someone else today.',
@@ -156,7 +156,7 @@
       ]
     },
     {
-      sign: 'Pisces', glyph: '\u2653', dates: 'Feb 19 \u2013 Mar 20', arcana: 'Arcana XII',
+      sign: 'Pisces', glyph: 'XII', dates: 'Feb 19 \u2013 Mar 20', arcana: 'Arcana XII',
       pairing: 'Dipped strawberries. Soft, a little dreamy, entirely on theme.',
       readings: [
         'A feeling you could not name yesterday has words today.',
