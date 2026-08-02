@@ -176,6 +176,7 @@ h1, h2, .intro-logo span { font-family: 'Cormorant Garamond', Georgia, serif; }
       border-radius: 12px;
       overflow: hidden;
       backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -184,11 +185,18 @@ h1, h2, .intro-logo span { font-family: 'Cormorant Garamond', Georgia, serif; }
   }
 
   .card-back {
+      transform: rotateY(0deg);
       background: radial-gradient(circle at 50% 25%, rgba(198,154,62,.18), transparent 28%),
                   linear-gradient(160deg, var(--wine), var(--ink-soft) 58%, var(--ink));
       border: 1px solid rgba(198,154,62,.18);
       color: var(--gold-bright);
       text-align: center;
+  }
+
+  .card-face {
+      transform: rotateY(180deg);
+      background: linear-gradient(160deg, var(--ink-soft), var(--ink) 70%);
+      color: var(--text-on-dark);
   }
 
   .card-back::before {
