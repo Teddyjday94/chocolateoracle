@@ -184,13 +184,25 @@
     card.style.setProperty('--angle', angle + 'deg');
     card.setAttribute('data-index', i);
     card.setAttribute('aria-label', 'Reveal today\'s reading for ' + z.sign);
-    card.innerHTML =
-      CARD_FRAME +
-      '<span class="card-number">' + z.arcana + '</span>' +
-      '<span class="card-illustration">' + constellationSVG(z.sign) + '</span>' +
-      '<span class="card-glyph" aria-hidden="true">' + z.glyph + '</span>' +
-      '<h3>' + z.sign + '</h3>' +
-      '<span class="zodiac-dates">' + z.dates + '</span>';
+
+    var inner = document.createElement('span');
+    inner.className = 'card-inner';
+    inner.innerHTML =
+      '<span class="card-back">' +
+        '<span class="back-lines"></span>' +
+        '<span class="back-icon">✦</span>' +
+        '<span class="back-title">Chocolate Oracle</span>' +
+      '</span>' +
+      '<span class="card-face">' +
+        CARD_FRAME +
+        '<span class="card-number">' + z.arcana + '</span>' +
+        '<span class="card-illustration">' + constellationSVG(z.sign) + '</span>' +
+        '<span class="card-glyph" aria-hidden="true">' + z.glyph + '</span>' +
+        '<h3>' + z.sign + '</h3>' +
+        '<span class="zodiac-dates">' + z.dates + '</span>' +
+      '</span>';
+
+    card.appendChild(inner);
     card.addEventListener('click', function (e) { drawCard(z, card, e); });
     fan.appendChild(card);
   });
@@ -224,11 +236,21 @@
     }
   }
 
+  function resetChosenCards() {
+    var chosen = fan.querySelectorAll('.tarot-card.chosen, .tarot-card.revealed');
+    chosen.forEach(function (card) {
+      card.classList.remove('chosen');
+      card.classList.remove('revealed');
+    });
+  }
+
   function drawCard(z, cardEl, evt) {
     var rect = cardEl.getBoundingClientRect();
     spawnSparks(rect.left + rect.width / 2, rect.top + rect.height / 3);
 
+    resetChosenCards();
     cardEl.classList.remove('chosen');
+    cardEl.classList.add('revealed');
     // restart animation
     void cardEl.offsetWidth;
     cardEl.classList.add('chosen');
@@ -256,6 +278,7 @@
   function closePanel() {
     scrim.classList.remove('open');
     document.body.style.overflow = '';
+    resetChosenCards();
     if (lastFocusedCard) lastFocusedCard.focus();
   }
 

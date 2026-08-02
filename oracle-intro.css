@@ -121,45 +121,122 @@ h1, h2, .intro-logo span { font-family: 'Cormorant Garamond', Georgia, serif; }
    dealt hand of cards actually fans. On narrow
    screens the fan flattens into a scroll strip.
    ============================================ */
-.deck-wrap { position: relative; z-index: 2; width: 100%; display: flex; justify-content: center; }
+.deck-wrap { position: relative; z-index: 2; width: 100%; display: flex; justify-content: center; perspective: 1400px; }
 
-.card-fan {
-    position: relative;
-    width: min(1040px, 100%);
-    height: 360px;
-    margin-top: 1rem;
-}
+  .card-fan {
+      position: relative;
+      width: min(1040px, 100%);
+      height: 360px;
+      margin-top: 1rem;
+  }
 
-.tarot-card {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 150px;
-    height: 238px;
-    margin-left: -75px;
-    transform-origin: 50% 100%;
-    transform: translateY(90px) scale(.55) rotate(0deg);
-    opacity: 0;
-    transition: transform .75s cubic-bezier(.2,.8,.2,1), opacity .5s ease, box-shadow .3s ease, filter .3s ease;
-    background: linear-gradient(160deg, var(--ink-soft), var(--ink) 70%);
-    border: none;
-    border-radius: 12px;
-    padding: .55rem .5rem .6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    cursor: pointer;
-    color: var(--text-on-dark);
-    font-family: 'Jost', sans-serif;
-    box-shadow: 0 10px 24px rgba(0,0,0,.35);
-    z-index: 1;
-}
+  .tarot-card {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 150px;
+      height: 238px;
+      margin-left: -75px;
+      transform-origin: 50% 100%;
+      transform: translateY(90px) scale(.55) rotate(0deg);
+      opacity: 0;
+      transition: transform .75s cubic-bezier(.2,.8,.2,1), opacity .5s ease, box-shadow .3s ease, filter .3s ease;
+      background: transparent;
+      border: none;
+      border-radius: 12px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-on-dark);
+      font-family: 'Jost', sans-serif;
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
+      z-index: 1;
+      transform-style: preserve-3d;
+  }
 
-.card-fan.in-fan .tarot-card {
-    transform: translateY(0) scale(1) rotate(var(--angle));
-    opacity: 1;
-}
+  .card-inner {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform .65s ease;
+  }
+
+  .tarot-card.revealed .card-inner {
+      transform: rotateY(180deg);
+  }
+
+  .card-back,
+  .card-face {
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: .55rem .5rem .6rem;
+  }
+
+  .card-back {
+      background: radial-gradient(circle at 50% 25%, rgba(198,154,62,.18), transparent 28%),
+                  linear-gradient(160deg, var(--wine), var(--ink-soft) 58%, var(--ink));
+      border: 1px solid rgba(198,154,62,.18);
+      color: var(--gold-bright);
+      text-align: center;
+  }
+
+  .card-back::before {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border: 1px dashed rgba(198,154,62,.35);
+      border-radius: 10px;
+      pointer-events: none;
+  }
+
+  .back-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 24% 22%, rgba(241,227,198,.18) 1px, transparent 0),
+        radial-gradient(circle at 78% 24%, rgba(241,227,198,.18) 1px, transparent 0),
+        radial-gradient(circle at 52% 70%, rgba(241,227,198,.18) 1px, transparent 0);
+      opacity: .5;
+      pointer-events: none;
+  }
+
+  .back-icon {
+      position: relative;
+      z-index: 1;
+      font-size: 1.85rem;
+      margin-bottom: .5rem;
+  }
+
+  .back-title {
+      position: relative;
+      z-index: 1;
+      font: .65rem/1 'DM Mono', monospace;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-top: .4rem;
+  }
+
+  .card-face {
+      background: linear-gradient(160deg, var(--ink-soft), var(--ink) 70%);
+      transform: rotateY(180deg);
+      color: var(--text-on-dark);
+  }
+
+  .card-fan.in-fan .tarot-card {
+      transform: translateY(0) scale(1) rotate(var(--angle));
+      opacity: 1;
+  }
 
 /* Decorative engraved frame, drawn once per card as an SVG overlay. */
 .card-frame {
