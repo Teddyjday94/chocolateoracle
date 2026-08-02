@@ -243,18 +243,20 @@ h1, h2, h3, .logo {
    STORY / SHOWCASE SECTION
    ============================================ */
 .showcase {
-    background: var(--parchment);
+    background: linear-gradient(158deg, #1f121c 0%, #371e31 100%);
     padding: 150px 10vw;
     display: grid;
     grid-template-columns: .8fr 1.2fr;
     gap: 9vw;
     align-items: center;
+    color: var(--text-on-light);
 }
-.section-intro h2, .section-heading h2, .connect h2 { font-size: clamp(2.7rem, 5.4vw, 5.1rem); font-weight: 600; line-height: .96; letter-spacing: -.02em; margin-bottom: 25px; }
-.section-intro > p:last-child { color: var(--text-on-light-dim); max-width: 340px; font-size: 1.02rem; }
-.section-intro .eyebrow, .section-heading .eyebrow { color: var(--wine); }
-.section-intro .eyebrow::before, .section-heading .eyebrow::before, .connect .eyebrow::before { content: '✦'; color: var(--wine); }
-.section-intro h2 em { color: var(--wine); font-style: italic; }
+.section-intro h2, .section-heading h2, .connect h2 { font-size: clamp(3rem, 5.4vw, 5.6rem); font-weight: 600; line-height: .96; letter-spacing: -.02em; margin-bottom: 25px; text-shadow: 0 10px 25px rgba(0, 0, 0, 0.18); }
+.section-intro > p:last-child { color: rgba(241, 227, 198, 0.95); max-width: 360px; font-size: 1.06rem; }
+.section-intro .eyebrow, .section-heading .eyebrow { color: var(--gold-bright); font-size: .75rem; letter-spacing: .18em; text-shadow: 0 0 10px rgba(232, 201, 121, 0.35); }
+.section-intro .eyebrow::before, .section-heading .eyebrow::before, .connect .eyebrow::before { content: '✦'; color: var(--gold-bright); }
+.section-intro h2 em { color: var(--gold-bright); font-style: italic; }
+.section-intro h2 { color: var(--text-on-light); }
 
 .video-container {
     position: relative;
