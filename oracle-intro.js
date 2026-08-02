@@ -266,7 +266,7 @@
       document.getElementById('readingText').textContent = todaysReading(z, signIndex);
       document.getElementById('readingPairing').textContent = z.pairing;
       openPanel();
-    }, 320);
+    }, 800);
   }
 
   function openPanel() {
